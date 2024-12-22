@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      httpClient:
+        ssl:
+          useInsecureTrustManager: true
+
+eureka:
+  client:
+    enabled: false
+
+lsm:
+  user:
+    url: http://localhost:8041
+  offer:
+    url: http://localhost:8042
+  file:
+    url: http://localhost:8043
+  lease:
+    url: http://localhost:8044
