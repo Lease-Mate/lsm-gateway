@@ -10,6 +10,12 @@ spring:
         connect-timeout: 10000
         response-timeout: 7s
       routes:
+        - id: excluded
+          uri: no://op
+          predicates:
+            - Path=Path=/v1/api/user/internal/**
+            - Path=/v1/api/file/internal/**
+            - Path=/v1/api/lease/internal/**
         - id: lsm-user
           uri: ${lsm.user.url}
           predicates:
@@ -18,14 +24,6 @@ spring:
           uri: ${lsm.user.url}/v3/api-docs
           predicates:
             - Path=/v3/api-docs/lsm-user
-        - id: lsm-offer
-          uri: ${lsm.offer.url}
-          predicates:
-            - Path=/v1/api/offer/**
-        - id: lsm-offer-api-docs
-          uri: ${lsm.offer.url}/v3/api-docs
-          predicates:
-            - Path=/v3/api-docs/lsm-offer
         - id: lsm-file
           uri: ${lsm.file.url}
           predicates:
