@@ -16,3 +16,5 @@ lsm:
     url: http://localhost:8043
   lease:
     url: http://localhost:8044
+  message:
+    url: http://localhost:8046
