@@ -40,6 +40,15 @@ spring:
           uri: ${lsm.lease.url}/v3/api-docs
           predicates:
             - Path=/v3/api-docs/lsm-lease
+        - id: lsm-message
+          uri: ${lsm.message.url}
+          predicates:
+            - Path=/v1/api/message/**
+            - Path=/ws/**
+        - id: lsm-message-api-docs
+          uri: ${lsm.message.url}/v3/api-docs
+          predicates:
+            - Path=/v3/api-docs/lsm-message
 
 logging:
   level:
